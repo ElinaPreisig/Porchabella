@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>4.1 Mythos Porchabella - Gletscher Dokumentation</title>
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #3498db;
+            --text-color: #333;
+            --background-color: #f5f5f5;
+            --shadow-color: rgba(0, 0, 0, 0.1);
+            --mystic-color: #8e44ad;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--background-color);
+            min-height: 100vh;
+        }
+
+        .content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+        }
+
+        section {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px var(--shadow-color);
+            margin-bottom: 20px;
+        }
+
+        h2 {
+            color: var(--mystic-color);
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+
+        p {
+            margin-bottom: 1rem;
+        }
+
+        .quote-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin: 1.5rem 0;
+        }
+
+        .quote {
+            background-color: #f8f9fa;
+            padding: 1.5rem;
+            border-radius: 8px;
+            border-left: 4px solid var(--mystic-color);
+            position: relative;
+        }
+
+        .quote-text {
+            font-style: italic;
+            margin-bottom: 1rem;
+        }
+
+        .quote-author {
+            text-align: right;
+            font-weight: bold;
+            color: var(--mystic-color);
+        }
+
+        .input-section {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        textarea {
+            width: 100%;
+            min-height: 150px;
+            padding: 1rem;
+            border: 2px solid var(--mystic-color);
+            border-radius: 5px;
+            font-size: 1rem;
+            resize: vertical;
+        }
+
+        textarea:focus {
+            outline: none;
+            border-color: var(--secondary-color);
+        }
+
+        .submit-button {
+            padding: 1rem 2rem;
+            background-color: var(--mystic-color);
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .submit-button:hover {
+            background-color: #7d3c98;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px var(--shadow-color);
+        }
+
+        .user-input {
+            margin-top: 1rem;
+            padding: 1rem;
+            background-color: #f8f9fa;
+            border-radius: 5px;
+            display: none;
+        }
+
+        .nav-button {
+            display: inline-block;
+            padding: 1rem 2rem;
+            background-color: var(--primary-color);
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+            text-align: center;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+            width: 100%;
+        }
+
+        .nav-button:hover {
+            background-color: var(--secondary-color);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px var(--shadow-color);
+        }
+
+        .decision-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 0.8rem;
+            margin-top: 1rem;
+        }
+
+        .decision-button {
+            background-color: #e0e0e0;
+            color: var(--text-color);
+        }
+
+        .decision-button:hover {
+            background-color: #d0d0d0;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        @media (max-width: 768px) {
+            .content {
+                padding: 10px;
+            }
+
+            section {
+                padding: 1rem;
+            }
+
+            .quote-container {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="content">
+        <section class="myth">
+            <h2>Die Legende der Porchabella</h2>
+            <p>In den tiefen Tälern der Schweizer Alpen erzählt man sich seit Generationen die Geschichte der Porchabella. Eine junge Frau, deren Schicksal sich in den eisigen Weiten des Gletschers verlor. Manche sagen, sie sei eine Prinzessin gewesen, andere behaupten, sie war eine einfache Hirtin. Doch alle Geschichten vereint ein Element: die mystische Verbindung zwischen Porchabella und dem ewigen Eis.</p>
+            <p>Die Legenden variieren von Tal zu Tal, doch der Kern bleibt stets derselbe: Eine junge Frau, die sich in den Bergen verirrte und nie wieder gesehen wurde. Manche behaupten, sie lebe noch immer im Eis, andere glauben, sie sei zu einem Geist geworden, der die Wanderer beschützt. Die Wahrheit bleibt im Nebel der Zeit verborgen.</p>
+        </section>
+
+        <section class="quotes">
+            <h2>Stimmen aus den Bergen</h2>
+            <div class="quote-container">
+                <div class="quote">
+                    <p class="quote-text">"Mein Großvater erzählte mir immer, er habe sie gesehen - eine weiße Gestalt im Mondlicht, die über den Gletscher schwebte. Er sagte, sie war schön und traurig zugleich."</p>
+                    <p class="quote-author">- Maria, 82, aus dem Engadin</p>
+                </div>
+                <div class="quote">
+                    <p class="quote-text">"Die alten Leute im Dorf sagen, wenn der Wind durch die Gletscherspalten pfeift, hört man ihr Lied. Es ist ein trauriges Lied, aber es tröstet die Wanderer."</p>
+                    <p class="quote-author">- Hans, 65, Bergführer</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="input">
+            <h2>Deine Geschichte</h2>
+            <div class="input-section">
+                <textarea id="userStory" placeholder="Was glaubst du, was mit Porchabella wirklich passiert ist? Teile deine Gedanken mit uns..."></textarea>
+                <button class="submit-button" onclick="saveStory()">Geschichte teilen</button>
+                <div id="storyOutput" class="user-input"></div>
+            </div>
+        </section>
+
+        <section class="decision-buttons">
+            <a href="4.0_Kapitel_4_-_Gletscherleiche_Porchabella.html" class="nav-button">Zurück zur Kapitelübersicht</a>
+            <a href="../0_Index_Normal.html" class="nav-button">Zurück zum Index</a>
+            <a href="3.2_Messung_Gletscher.html" class="nav-button">Zurück zur vorherigen Seite</a>
+
+            <div id="mysticDecisions" class="decision-buttons hidden">
+                <a href="1.1_Sage_Porchabella.html" class="nav-button decision-button">1.1 Sage Porchabella</a>
+                <a href="5.1_Visualisierung_Zukunft_Gletscher.html" class="nav-button decision-button">5.1 Visualisierung Zukunft Gletscher</a>
+            </div>
+
+            <div id="freeDecisions" class="decision-buttons hidden">
+                <a href="4.2_Leichenfund.html" class="nav-button decision-button">4.2 Leichenfund</a>
+                <a href="4.2.1_Konservierung_im_Eis.html" class="nav-button decision-button">4.2.1 Konservierung im Eis</a>
+            </div>
+        </section>
+    </div>
+
+    <script>
+        // Story saving functionality
+        function saveStory() {
+            const story = document.getElementById('userStory').value;
+            const output = document.getElementById('storyOutput');
+            
+            if (story.trim() !== '') {
+                localStorage.setItem('porchabellaStory', story);
+                output.textContent = story;
+                output.style.display = 'block';
+                document.getElementById('userStory').value = '';
+            }
+        }
+
+        // Load saved story if exists
+        document.addEventListener('DOMContentLoaded', function() {
+            const savedStory = localStorage.getItem('porchabellaStory');
+            if (savedStory) {
+                const output = document.getElementById('storyOutput');
+                output.textContent = savedStory;
+                output.style.display = 'block';
+            }
+
+            // Route type logic
+            const routeType = localStorage.getItem('routeType');
+            const mysticDecisions = document.getElementById('mysticDecisions');
+            const freeDecisions = document.getElementById('freeDecisions');
+
+            if (routeType === 'mystisch') {
+                mysticDecisions.classList.remove('hidden');
+            } else if (routeType === 'frei') {
+                freeDecisions.classList.remove('hidden');
+            }
+        });
+    </script>
+</body>
+</html> 

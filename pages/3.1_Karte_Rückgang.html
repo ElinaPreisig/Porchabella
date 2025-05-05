@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3.1 Karte Rückgang - Gletscher Dokumentation</title>
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #3498db;
+            --text-color: #333;
+            --background-color: #f5f5f5;
+            --shadow-color: rgba(0, 0, 0, 0.1);
+            --map-background: #e8f4f8;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--background-color);
+            min-height: 100vh;
+        }
+
+        .content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+        }
+
+        section {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px var(--shadow-color);
+            margin-bottom: 20px;
+        }
+
+        h2 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+
+        .map-container {
+            position: relative;
+            width: 100%;
+            height: 500px;
+            background-color: var(--map-background);
+            border-radius: 5px;
+            overflow: hidden;
+        }
+
+        .map-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+            transition: opacity 0.3s ease;
+        }
+
+        .map-point {
+            position: absolute;
+            width: 12px;
+            height: 12px;
+            background-color: var(--secondary-color);
+            border-radius: 50%;
+            cursor: pointer;
+            transition: transform 0.2s ease;
+        }
+
+        .map-point:hover {
+            transform: scale(1.5);
+        }
+
+        .map-popup {
+            position: absolute;
+            background: white;
+            padding: 1rem;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px var(--shadow-color);
+            display: none;
+            z-index: 100;
+            max-width: 200px;
+        }
+
+        .input-section {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            align-items: center;
+        }
+
+        .year-input {
+            padding: 0.8rem;
+            border: 2px solid var(--primary-color);
+            border-radius: 5px;
+            font-size: 1.2rem;
+            width: 150px;
+            text-align: center;
+        }
+
+        .year-input:focus {
+            outline: none;
+            border-color: var(--secondary-color);
+        }
+
+        .year-feedback {
+            text-align: center;
+            font-size: 1.1rem;
+            color: var(--primary-color);
+            min-height: 2rem;
+        }
+
+        .nav-button {
+            display: inline-block;
+            padding: 1rem 2rem;
+            background-color: var(--primary-color);
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+            text-align: center;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+            width: 100%;
+        }
+
+        .nav-button:hover {
+            background-color: var(--secondary-color);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px var(--shadow-color);
+        }
+
+        .decision-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 0.8rem;
+            margin-top: 1rem;
+        }
+
+        .decision-button {
+            background-color: #e0e0e0;
+            color: var(--text-color);
+        }
+
+        .decision-button:hover {
+            background-color: #d0d0d0;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        @media (max-width: 768px) {
+            .map-container {
+                height: 300px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="content">
+        <section class="map">
+            <h2>Gletscherrückgang in der Schweiz</h2>
+            <div class="map-container">
+                <div class="map-overlay" id="currentMap" style="background-image: url('../media/current_glaciers.png');"></div>
+                <div class="map-overlay" id="historicMap" style="background-image: url('../media/historic_glaciers.png'); opacity: 0;"></div>
+                
+                <!-- Beispiel-Punkte auf der Karte -->
+                <div class="map-point" style="top: 30%; left: 25%;" data-year="1850" data-info="Erste Vermessung des Gletschers"></div>
+                <div class="map-point" style="top: 45%; left: 40%;" data-year="1900" data-info="Beginn systematischer Messungen"></div>
+                <div class="map-point" style="top: 60%; left: 55%;" data-year="1950" data-info="Starker Rückgang nach warmen Sommern"></div>
+                <div class="map-point" style="top: 75%; left: 70%;" data-year="2000" data-info="Beschleunigter Rückgang durch Klimawandel"></div>
+                
+                <div class="map-popup" id="mapPopup"></div>
+            </div>
+        </section>
+
+        <section class="input">
+            <h2>Gletscher in Ihrem Geburtsjahr</h2>
+            <div class="input-section">
+                <input type="number" class="year-input" id="birthYear" min="1850" max="2023" placeholder="Jahr">
+                <div class="year-feedback" id="yearFeedback"></div>
+            </div>
+        </section>
+
+        <section class="decision-buttons">
+            <a href="3.0_Kapitel_3_-_Gletscherrückgang.html" class="nav-button">Zurück zur Kapitelübersicht</a>
+            <a href="../0_Index_Normal.html" class="nav-button">Zurück zum Index</a>
+            <a href="2.2.1_Gletschermühlen.html" class="nav-button">Zurück zur vorherigen Seite</a>
+
+            <div id="mysticDecisions" class="decision-buttons hidden">
+                <a href="4.1_Mythos_Porchabella.html" class="nav-button decision-button">4.1 Mythos Porchabella</a>
+                <a href="5.1_Visualisierung_Zukunft_Gletscher.html" class="nav-button decision-button">5.1 Visualisierung Zukunft Gletscher</a>
+            </div>
+
+            <div id="scienceDecisions" class="decision-buttons hidden">
+                <a href="1.2_Entstehung_Gletscher.html" class="nav-button decision-button">1.2 Entstehung Gletscher</a>
+                <a href="3.2_Messung_Gletscher.html" class="nav-button decision-button">3.2 Messung Gletscher</a>
+                <a href="5.2_Lösungen.html" class="nav-button decision-button">5.2 Lösungen</a>
+            </div>
+
+            <div id="freeDecisions" class="decision-buttons hidden">
+                <a href="3.2_Messung_Gletscher.html" class="nav-button decision-button">3.2 Messung Gletscher</a>
+                <a href="5.1_Visualisierung_Zukunft_Gletscher.html" class="nav-button decision-button">5.1 Visualisierung Zukunft Gletscher</a>
+            </div>
+        </section>
+    </div>
+
+    <script>
+        // Map interaction
+        const mapPoints = document.querySelectorAll('.map-point');
+        const mapPopup = document.getElementById('mapPopup');
+
+        mapPoints.forEach(point => {
+            point.addEventListener('mouseenter', function() {
+                const year = this.getAttribute('data-year');
+                const info = this.getAttribute('data-info');
+                mapPopup.innerHTML = `<strong>${year}</strong><br>${info}`;
+                mapPopup.style.display = 'block';
+                mapPopup.style.left = this.offsetLeft + 20 + 'px';
+                mapPopup.style.top = this.offsetTop + 'px';
+            });
+
+            point.addEventListener('mouseleave', function() {
+                mapPopup.style.display = 'none';
+            });
+        });
+
+        // Birth year input
+        const birthYearInput = document.getElementById('birthYear');
+        const yearFeedback = document.getElementById('yearFeedback');
+        const historicMap = document.getElementById('historicMap');
+        const currentMap = document.getElementById('currentMap');
+
+        birthYearInput.addEventListener('input', function() {
+            const year = parseInt(this.value);
+            if (year >= 1850 && year <= 2023) {
+                const opacity = (year - 1850) / (2023 - 1850);
+                historicMap.style.opacity = 1 - opacity;
+                yearFeedback.textContent = `So sah der Gletscher im Jahr ${year} aus.`;
+            } else {
+                yearFeedback.textContent = 'Bitte geben Sie ein Jahr zwischen 1850 und 2023 ein.';
+            }
+        });
+
+        // Route type logic
+        document.addEventListener('DOMContentLoaded', function() {
+            const routeType = localStorage.getItem('routeType');
+            const mysticDecisions = document.getElementById('mysticDecisions');
+            const scienceDecisions = document.getElementById('scienceDecisions');
+            const freeDecisions = document.getElementById('freeDecisions');
+
+            if (routeType === 'mystisch') {
+                mysticDecisions.classList.remove('hidden');
+            } else if (routeType === 'wissenschaft') {
+                scienceDecisions.classList.remove('hidden');
+            } else if (routeType === 'frei') {
+                freeDecisions.classList.remove('hidden');
+            }
+        });
+    </script>
+</body>
+</html> 

@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2.1 Ausdehnung in der Schweiz - Gletscher Dokumentation</title>
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #3498db;
+            --text-color: #333;
+            --background-color: #f5f5f5;
+            --shadow-color: rgba(0, 0, 0, 0.1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--background-color);
+            min-height: 100vh;
+        }
+
+        .content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+        }
+
+        section {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px var(--shadow-color);
+            margin-bottom: 20px;
+        }
+
+        h2 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+
+        p {
+            margin-bottom: 1rem;
+        }
+
+        .map-container {
+            position: relative;
+            width: 100%;
+            height: 500px;
+            border-radius: 5px;
+            overflow: hidden;
+            background-color: #e0e0e0;
+        }
+
+        .map-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+            transition: opacity 0.3s ease;
+        }
+
+        .map-controls {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            margin-top: 1rem;
+            padding: 1rem;
+            background: white;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px var(--shadow-color);
+        }
+
+        .time-slider {
+            width: 100%;
+            margin: 1rem 0;
+        }
+
+        .time-labels {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 0.5rem;
+            font-size: 0.9rem;
+            color: var(--text-color);
+        }
+
+        .nav-button {
+            display: inline-block;
+            padding: 1rem 2rem;
+            background-color: var(--primary-color);
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+            text-align: center;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+            width: 100%;
+        }
+
+        .nav-button:hover {
+            background-color: var(--secondary-color);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px var(--shadow-color);
+        }
+
+        .decision-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 0.8rem;
+            margin-top: 1rem;
+        }
+
+        .decision-button {
+            background-color: #e0e0e0;
+            color: var(--text-color);
+        }
+
+        .decision-button:hover {
+            background-color: #d0d0d0;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        @media (max-width: 768px) {
+            .map-container {
+                height: 300px;
+            }
+
+            .map-controls {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="content">
+        <section class="info">
+            <h2>Gletscherwanderung in der Schweiz</h2>
+            <p>Die Gletscher der Schweiz haben im Laufe der Zeit dramatische Veränderungen durchlebt. Während der letzten Eiszeit vor etwa 20.000 Jahren waren weite Teile der Schweiz von Eis bedeckt. Seitdem haben sich die Gletscher kontinuierlich zurückgezogen, ein Prozess, der sich in den letzten Jahrzehnten deutlich beschleunigt hat.</p>
+            <p>Die Ausdehnung der Gletscher wird von verschiedenen Faktoren beeinflusst:</p>
+            <ul>
+                <li>Klimatische Bedingungen (Temperatur, Niederschlag)</li>
+                <li>Geografische Lage und Höhe</li>
+                <li>Topografie des Geländes</li>
+                <li>Zeitliche Entwicklung und saisonale Schwankungen</li>
+            </ul>
+            <p>Die interaktive Karte zeigt die historische und aktuelle Ausdehnung der wichtigsten Gletscher in der Schweiz. Nutzen Sie den Schieberegler, um die Entwicklung über die Zeit zu verfolgen.</p>
+        </section>
+
+        <section class="map">
+            <h2>Interaktive Gletscherkarte</h2>
+            <div class="map-container">
+                <div class="map-overlay" id="currentMap" style="background-image: url('../media/current_glaciers.png');"></div>
+                <div class="map-overlay" id="historicMap" style="background-image: url('../media/historic_glaciers.png'); opacity: 0;"></div>
+            </div>
+            <div class="map-controls">
+                <div class="time-labels">
+                    <span>1850</span>
+                    <span>2023</span>
+                </div>
+                <input type="range" class="time-slider" id="timeSlider" min="0" max="100" value="100">
+            </div>
+        </section>
+
+        <section class="decision-buttons">
+            <a href="2.0_Kapitel_2_-_Wanderung_Gletscher.html" class="nav-button">Zurück zur Kapitelübersicht</a>
+            <a href="../0_Index_Normal.html" class="nav-button">Zurück zum Index</a>
+            <a href="1.2.1_Entstehung_Eis.html" class="nav-button">Zurück zur vorherigen Seite</a>
+
+            <div id="mysticDecisions" class="decision-buttons hidden">
+                <a href="3.1_Karte_Rückgang.html" class="nav-button decision-button">3.1 Karte Rückgang</a>
+                <a href="4.1_Mythos_Porchabella.html" class="nav-button decision-button">4.1 Mythos Porchabella</a>
+                <a href="5.1_Visualisierung_Zukunft_Gletscher.html" class="nav-button decision-button">5.1 Visualisierung Zukunft Gletscher</a>
+            </div>
+
+            <div id="scienceDecisions" class="decision-buttons hidden">
+                <a href="3.1_Karte_Rückgang.html" class="nav-button decision-button">3.1 Karte Rückgang</a>
+                <a href="3.2_Messung_Gletscher.html" class="nav-button decision-button">3.2 Messung Gletscher</a>
+                <a href="4.2_Leichenfund.html" class="nav-button decision-button">4.2 Leichenfund</a>
+            </div>
+
+            <div id="freeDecisions" class="decision-buttons hidden">
+                <a href="2.2_Auswirkungen_Landschaft.html" class="nav-button decision-button">2.2 Auswirkungen Landschaft</a>
+                <a href="3.1_Karte_Rückgang.html" class="nav-button decision-button">3.1 Karte Rückgang</a>
+            </div>
+        </section>
+    </div>
+
+    <script>
+        // Map interaction
+        const timeSlider = document.getElementById('timeSlider');
+        const historicMap = document.getElementById('historicMap');
+        const currentMap = document.getElementById('currentMap');
+
+        timeSlider.addEventListener('input', function() {
+            const value = this.value;
+            historicMap.style.opacity = (100 - value) / 100;
+        });
+
+        // Route type logic
+        document.addEventListener('DOMContentLoaded', function() {
+            const routeType = localStorage.getItem('routeType');
+            const mysticDecisions = document.getElementById('mysticDecisions');
+            const scienceDecisions = document.getElementById('scienceDecisions');
+            const freeDecisions = document.getElementById('freeDecisions');
+
+            if (routeType === 'mystisch') {
+                mysticDecisions.classList.remove('hidden');
+            } else if (routeType === 'wissenschaft') {
+                scienceDecisions.classList.remove('hidden');
+            } else if (routeType === 'frei') {
+                freeDecisions.classList.remove('hidden');
+            }
+        });
+    </script>
+</body>
+</html> 

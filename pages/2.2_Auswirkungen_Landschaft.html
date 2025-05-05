@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2.2 Auswirkungen Landschaft - Gletscher Dokumentation</title>
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #3498db;
+            --text-color: #333;
+            --background-color: #f5f5f5;
+            --shadow-color: rgba(0, 0, 0, 0.1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--background-color);
+            min-height: 100vh;
+        }
+
+        .content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+        }
+
+        section {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px var(--shadow-color);
+            margin-bottom: 20px;
+        }
+
+        h2 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+
+        p {
+            margin-bottom: 1rem;
+        }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 5px;
+            aspect-ratio: 16/9;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.05);
+        }
+
+        .gallery-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(0, 0, 0, 0.7);
+            color: white;
+            padding: 0.5rem;
+            font-size: 0.9rem;
+        }
+
+        .download-section {
+            text-align: center;
+            padding: 2rem;
+        }
+
+        .download-button {
+            display: inline-block;
+            padding: 1rem 2rem;
+            background-color: var(--primary-color);
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+            margin-top: 1rem;
+        }
+
+        .download-button:hover {
+            background-color: var(--secondary-color);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px var(--shadow-color);
+        }
+
+        .nav-button {
+            display: inline-block;
+            padding: 1rem 2rem;
+            background-color: var(--primary-color);
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+            text-align: center;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+            width: 100%;
+        }
+
+        .nav-button:hover {
+            background-color: var(--secondary-color);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px var(--shadow-color);
+        }
+
+        .decision-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 0.8rem;
+            margin-top: 1rem;
+        }
+
+        .decision-button {
+            background-color: #e0e0e0;
+            color: var(--text-color);
+        }
+
+        .decision-button:hover {
+            background-color: #d0d0d0;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        @media (max-width: 768px) {
+            .gallery {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="content">
+        <section class="info">
+            <h2>Gletscherspuren in der Landschaft</h2>
+            <p>Gletscher haben im Laufe der Zeit tiefe Spuren in der Schweizer Landschaft hinterlassen. Diese geologischen Formationen erzählen die Geschichte der eiszeitlichen Vergangenheit und zeigen, wie mächtig die Kräfte der Gletscher waren.</p>
+            
+            <h3>Typische Gletscherformationen</h3>
+            <ul>
+                <li><strong>Moränen:</strong> Schutt- und Geröllablagerungen, die der Gletscher transportiert und an seinen Rändern abgelagert hat</li>
+                <li><strong>U-Täler:</strong> Charakteristische Trogtäler, die durch die erosive Kraft des Gletschereises entstanden sind</li>
+                <li><strong>Gletschertöpfe:</strong> Rundliche Vertiefungen im Fels, die durch rotierende Steine im Gletscherwasser entstanden sind</li>
+                <li><strong>Gletschermühlen:</strong> Vertikale Schächte im Eis, die durch Schmelzwasser entstehen</li>
+            </ul>
+        </section>
+
+        <section class="gallery">
+            <h2>Landschaftsformen im Bild</h2>
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="../media/moraine.jpg" alt="Moränenlandschaft im Wallis">
+                    <div class="gallery-caption">Moränenlandschaft im Wallis</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="../media/u-tal.jpg" alt="U-Tal im Berner Oberland">
+                    <div class="gallery-caption">U-Tal im Berner Oberland</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="../media/gletschertopf.jpg" alt="Gletschertopf im Kanton Uri">
+                    <div class="gallery-caption">Gletschertopf im Kanton Uri</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="../media/gletschermuehle.jpg" alt="Gletschermühle im Aletschgebiet">
+                    <div class="gallery-caption">Gletschermühle im Aletschgebiet</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="download">
+            <h2>Gelände-Guide</h2>
+            <p>Entdecken Sie die Gletscherspuren in der Natur mit unserem praktischen Beobachtungs-Guide. Der Guide enthält detaillierte Beschreibungen und Fotos der wichtigsten Landschaftsformen sowie Tipps für die Beobachtung vor Ort.</p>
+            <a href="../medien/landschaftsguide.pdf" download class="download-button">Guide herunterladen</a>
+        </section>
+
+        <section class="decision-buttons">
+            <a href="2.0_Kapitel_2_-_Wanderung_Gletscher.html" class="nav-button">Zurück zur Kapitelübersicht</a>
+            <a href="../0_Index_Normal.html" class="nav-button">Zurück zum Index</a>
+            <a href="2.1_Ausdehnung_in_der_Schweiz.html" class="nav-button">Zurück zur vorherigen Seite</a>
+
+            <div id="natureDecisions" class="decision-buttons hidden">
+                <a href="2.2.1_Gletschermühlen.html" class="nav-button decision-button">2.2.1 Gletschermühlen</a>
+                <a href="4.2_Leichenfund.html" class="nav-button decision-button">4.2 Leichenfund</a>
+                <a href="5.3_Gletschervorfeld.html" class="nav-button decision-button">5.3 Gletschervorfeld</a>
+            </div>
+
+            <div id="freeDecisions" class="decision-buttons hidden">
+                <a href="2.2.1_Gletschermühlen.html" class="nav-button decision-button">2.2.1 Gletschermühlen</a>
+                <a href="3.1_Karte_Rückgang.html" class="nav-button decision-button">3.1 Karte Rückgang</a>
+            </div>
+        </section>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const routeType = localStorage.getItem('routeType');
+            const natureDecisions = document.getElementById('natureDecisions');
+            const freeDecisions = document.getElementById('freeDecisions');
+
+            if (routeType === 'natur') {
+                natureDecisions.classList.remove('hidden');
+            } else if (routeType === 'frei') {
+                freeDecisions.classList.remove('hidden');
+            }
+        });
+    </script>
+</body>
+</html> 

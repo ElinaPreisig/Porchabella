@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>4.2 Leichenfund - Gletscher Dokumentation</title>
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #3498db;
+            --text-color: #333;
+            --background-color: #f5f5f5;
+            --shadow-color: rgba(0, 0, 0, 0.1);
+            --archive-color: #666;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--background-color);
+            min-height: 100vh;
+        }
+
+        .content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+        }
+
+        section {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px var(--shadow-color);
+            margin-bottom: 20px;
+        }
+
+        h2 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+
+        p {
+            margin-bottom: 1rem;
+        }
+
+        .archive-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin: 1.5rem 0;
+        }
+
+        .archive-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px var(--shadow-color);
+            transition: transform 0.3s ease;
+        }
+
+        .archive-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .archive-item img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            filter: grayscale(100%);
+            transition: filter 0.3s ease;
+        }
+
+        .archive-item:hover img {
+            filter: grayscale(0%);
+        }
+
+        .archive-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(0, 0, 0, 0.7);
+            color: white;
+            padding: 0.5rem;
+            font-size: 0.9rem;
+        }
+
+        .video-container {
+            position: relative;
+            width: 100%;
+            padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+            margin: 1rem 0;
+            background-color: #000;
+            border-radius: 5px;
+            overflow: hidden;
+        }
+
+        .video-container video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .video-caption {
+            margin-top: 0.5rem;
+            font-size: 0.9rem;
+            color: var(--text-color);
+            opacity: 0.8;
+        }
+
+        .nav-button {
+            display: inline-block;
+            padding: 1rem 2rem;
+            background-color: var(--primary-color);
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+            text-align: center;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+            width: 100%;
+        }
+
+        .nav-button:hover {
+            background-color: var(--secondary-color);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px var(--shadow-color);
+        }
+
+        .decision-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 0.8rem;
+            margin-top: 1rem;
+        }
+
+        .decision-button {
+            background-color: #e0e0e0;
+            color: var(--text-color);
+        }
+
+        .decision-button:hover {
+            background-color: #d0d0d0;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        @media (max-width: 768px) {
+            .content {
+                padding: 10px;
+            }
+
+            section {
+                padding: 1rem;
+            }
+
+            .archive-gallery {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="content">
+        <section class="story">
+            <h2>Die Entdeckung</h2>
+            <p>Es war ein sonniger Sommertag im Juli 2023, als zwei Wanderer im Berner Oberland auf eine außergewöhnliche Entdeckung stießen. Was zunächst wie ein dunkler Fleck im Eis aussah, entpuppte sich als eine menschliche Gestalt, die seit Jahrzehnten im Gletscher konserviert worden war.</p>
+            <p>"Wir waren völlig fassungslos", erinnert sich einer der Entdecker. "Das Eis hatte sich in diesem besonders warmen Sommer so weit zurückgezogen, dass wir plötzlich auf diese historische Spur stießen."</p>
+            <p>Die Bergrettung und Archäologen wurden sofort alarmiert. Unter strengen Sicherheitsvorkehrungen begann die Bergung der Leiche, die sich als außergewöhnlich gut erhalten erwies. Die Kleidung und persönlichen Gegenstände deuteten auf eine Person aus dem 19. Jahrhundert hin.</p>
+        </section>
+
+        <section class="archive">
+            <h2>Archivmaterial</h2>
+            <div class="archive-gallery">
+                <div class="archive-item">
+                    <img src="../media/leichenfund_1.jpg" alt="Erste Aufnahme des Fundes">
+                    <div class="archive-caption">Erste Aufnahme des Fundes durch die Entdecker</div>
+                </div>
+                <div class="archive-item">
+                    <img src="../media/leichenfund_2.jpg" alt="Bergung durch das Team">
+                    <div class="archive-caption">Bergung durch das archäologische Team</div>
+                </div>
+                <div class="archive-item">
+                    <img src="../media/leichenfund_3.jpg" alt="Pressekonferenz">
+                    <div class="archive-caption">Pressekonferenz zur Vorstellung der Funde</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="video">
+            <h2>Die Bedeutung des Fundes</h2>
+            <div class="video-container">
+                <video controls poster="../media/leichenfund_poster.jpg">
+                    <source src="../media/leichenfund_video.mp4" type="video/mp4">
+                    <track kind="captions" src="../media/leichenfund_de.vtt" srclang="de" label="Deutsch" default>
+                    Ihr Browser unterstützt das Video-Element nicht.
+                </video>
+            </div>
+            <p class="video-caption">Interview mit der leitenden Archäologin über die Bedeutung des Fundes für die Forschung</p>
+        </section>
+
+        <section class="decision-buttons">
+            <a href="4.0_Kapitel_4_-_Gletscherleiche_Porchabella.html" class="nav-button">Zurück zur Kapitelübersicht</a>
+            <a href="../0_Index_Normal.html" class="nav-button">Zurück zum Index</a>
+            <a href="4.1_Mythos_Porchabella.html" class="nav-button">Zurück zur vorherigen Seite</a>
+
+            <div id="natureDecisions" class="decision-buttons hidden">
+                <a href="2.2_Auswirkungen_Landschaft.html" class="nav-button decision-button">2.2 Auswirkungen Landschaft</a>
+                <a href="5.3_Gletschervorfeld.html" class="nav-button decision-button">5.3 Gletschervorfeld</a>
+            </div>
+
+            <div id="scienceDecisions" class="decision-buttons hidden">
+                <a href="3.1_Karte_Rückgang.html" class="nav-button decision-button">3.1 Karte Rückgang</a>
+                <a href="5.2_Lösungen.html" class="nav-button decision-button">5.2 Lösungen</a>
+            </div>
+
+            <div id="freeDecisions" class="decision-buttons hidden">
+                <a href="4.1_Mythos_Porchabella.html" class="nav-button decision-button">4.1 Mythos Porchabella</a>
+                <a href="4.2.1_Konservierung_im_Eis.html" class="nav-button decision-button">4.2.1 Konservierung im Eis</a>
+            </div>
+        </section>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const routeType = localStorage.getItem('routeType');
+            const natureDecisions = document.getElementById('natureDecisions');
+            const scienceDecisions = document.getElementById('scienceDecisions');
+            const freeDecisions = document.getElementById('freeDecisions');
+
+            if (routeType === 'natur') {
+                natureDecisions.classList.remove('hidden');
+            } else if (routeType === 'wissenschaft') {
+                scienceDecisions.classList.remove('hidden');
+            } else if (routeType === 'frei') {
+                freeDecisions.classList.remove('hidden');
+            }
+        });
+    </script>
+</body>
+</html> 

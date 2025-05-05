@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>5.3 Gletschervorfeld - Gletscher Dokumentation</title>
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #3498db;
+            --text-color: #333;
+            --background-color: #f5f5f5;
+            --shadow-color: rgba(0, 0, 0, 0.1);
+            --success-color: #2ecc71;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--background-color);
+            min-height: 100vh;
+        }
+
+        .content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+        }
+
+        section {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px var(--shadow-color);
+            margin-bottom: 20px;
+        }
+
+        h2 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+
+        h3 {
+            color: var(--primary-color);
+            margin: 1.5rem 0 1rem;
+            font-size: 1.2rem;
+        }
+
+        p {
+            margin-bottom: 1rem;
+        }
+
+        .plant-id {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
+        }
+
+        .plant-options {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin: 1rem 0;
+        }
+
+        .option-button {
+            padding: 1rem;
+            background-color: white;
+            border: 2px solid var(--primary-color);
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-align: center;
+        }
+
+        .option-button:hover {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        .option-button.selected {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        .result-container {
+            margin-top: 2rem;
+            padding: 1.5rem;
+            background-color: var(--success-color);
+            color: white;
+            border-radius: 5px;
+            display: none;
+        }
+
+        .result-container.show {
+            display: block;
+            animation: fadeIn 0.5s ease;
+        }
+
+        .result-image {
+            width: 100%;
+            max-width: 300px;
+            height: auto;
+            border-radius: 5px;
+            margin: 1rem 0;
+        }
+
+        .nav-button {
+            display: inline-block;
+            padding: 1rem 2rem;
+            background-color: var(--primary-color);
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+            text-align: center;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+            width: 100%;
+        }
+
+        .nav-button:hover {
+            background-color: var(--secondary-color);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px var(--shadow-color);
+        }
+
+        .decision-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 0.8rem;
+            margin-top: 1rem;
+        }
+
+        .decision-button {
+            background-color: #e0e0e0;
+            color: var(--text-color);
+        }
+
+        .decision-button:hover {
+            background-color: #d0d0d0;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @media (max-width: 768px) {
+            .content {
+                padding: 10px;
+            }
+
+            section {
+                padding: 1rem;
+            }
+
+            .plant-options {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="content">
+        <section class="habitat">
+            <h2>Neue Lebensräume im Gletschervorfeld</h2>
+            <p>Nach dem Rückzug der Gletscher entstehen neue, dynamische Lebensräume. Diese sogenannten Gletschervorfelder sind geprägt von kargen Böden, die sich langsam mit Leben füllen. Die ersten Pioniere sind oft Flechten und Moose, gefolgt von spezialisierten Pflanzenarten, die sich an die extremen Bedingungen angepasst haben.</p>
+            
+            <h3>Typische Pflanzenarten</h3>
+            <p>Im Gletschervorfeld finden sich verschiedene Pionierpflanzen, die sich an die rauen Bedingungen angepasst haben. Dazu gehören:</p>
+            <ul>
+                <li>Alpen-Mannsschild (Androsace alpina)</li>
+                <li>Gletscher-Hahnenfuß (Ranunculus glacialis)</li>
+                <li>Gletscher-Pestwurz (Petasites paradoxus)</li>
+                <li>Alpen-Leinkraut (Linaria alpina)</li>
+            </ul>
+        </section>
+
+        <section class="plant-id">
+            <h2>Pflanzenbestimmung</h2>
+            <p>Entdecken Sie die typischen Pflanzen des Gletschervorfelds. Wählen Sie die Merkmale aus, die Sie beobachtet haben:</p>
+
+            <h3>Blattform</h3>
+            <div class="plant-options">
+                <button class="option-button" data-category="leaf" data-value="round">Rund</button>
+                <button class="option-button" data-category="leaf" data-value="lobed">Gelappt</button>
+                <button class="option-button" data-category="leaf" data-value="linear">Schmal</button>
+            </div>
+
+            <h3>Blütenfarbe</h3>
+            <div class="plant-options">
+                <button class="option-button" data-category="flower" data-value="white">Weiß</button>
+                <button class="option-button" data-category="flower" data-value="yellow">Gelb</button>
+                <button class="option-button" data-category="flower" data-value="purple">Violett</button>
+            </div>
+
+            <h3>Wuchshöhe</h3>
+            <div class="plant-options">
+                <button class="option-button" data-category="height" data-value="low">Niedrig (5-15 cm)</button>
+                <button class="option-button" data-category="height" data-value="medium">Mittel (15-30 cm)</button>
+                <button class="option-button" data-category="height" data-value="high">Hoch (30-50 cm)</button>
+            </div>
+
+            <div class="result-container" id="result">
+                <h3>Ihre Pflanze könnte sein:</h3>
+                <p id="result-text"></p>
+                <img id="result-image" class="result-image" src="" alt="">
+                <p id="result-description"></p>
+            </div>
+        </section>
+
+        <section class="decision-buttons">
+            <a href="5.0_Kapitel_5_-_Zukunft.html" class="nav-button">Zurück zur Kapitelübersicht</a>
+            <a href="../0_Index_Normal.html" class="nav-button">Zurück zum Index</a>
+            <a href="5.2_Lösungen.html" class="nav-button">Zurück zur vorherigen Seite</a>
+
+            <div id="natureDecisions" class="decision-buttons hidden">
+                <a href="1.2_Entstehung_Gletscher.html" class="nav-button decision-button">1.2 Entstehung Gletscher</a>
+                <a href="2.2_Auswirkungen_Landschaft.html" class="nav-button decision-button">2.2 Auswirkungen Landschaft</a>
+            </div>
+
+            <div id="freeDecisions" class="decision-buttons hidden">
+                <a href="1.1_Sage_Porchabella.html" class="nav-button decision-button">1.1 Sage Porchabella</a>
+                <a href="2.2_Auswirkungen_Landschaft.html" class="nav-button decision-button">2.2 Auswirkungen Landschaft</a>
+            </div>
+        </section>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Route type logic
+            const routeType = localStorage.getItem('routeType');
+            const natureDecisions = document.getElementById('natureDecisions');
+            const freeDecisions = document.getElementById('freeDecisions');
+
+            if (routeType === 'natur') {
+                natureDecisions.classList.remove('hidden');
+            } else if (routeType === 'frei') {
+                freeDecisions.classList.remove('hidden');
+            }
+
+            // Plant identification logic
+            const plants = {
+                'alpen-mannsschild': {
+                    name: 'Alpen-Mannsschild',
+                    leaf: 'round',
+                    flower: 'white',
+                    height: 'low',
+                    image: '../media/alpen-mannsschild.jpg',
+                    description: 'Eine typische Pionierpflanze mit weißen Blüten und rosettenförmigen Blättern.'
+                },
+                'gletscher-hahnenfuss': {
+                    name: 'Gletscher-Hahnenfuß',
+                    leaf: 'lobed',
+                    flower: 'white',
+                    height: 'low',
+                    image: '../media/gletscher-hahnenfuss.jpg',
+                    description: 'Bekannt für seine weißen Blüten und gelappten Blätter.'
+                },
+                'gletscher-pestwurz': {
+                    name: 'Gletscher-Pestwurz',
+                    leaf: 'round',
+                    flower: 'purple',
+                    height: 'medium',
+                    image: '../media/gletscher-pestwurz.jpg',
+                    description: 'Charakteristisch durch seine violetten Blüten und großen Blätter.'
+                },
+                'alpen-leinkraut': {
+                    name: 'Alpen-Leinkraut',
+                    leaf: 'linear',
+                    flower: 'purple',
+                    height: 'low',
+                    image: '../media/alpen-leinkraut.jpg',
+                    description: 'Eine zierliche Pflanze mit violetten Blüten und schmalen Blättern.'
+                }
+            };
+
+            const options = document.querySelectorAll('.option-button');
+            const resultContainer = document.getElementById('result');
+            const resultText = document.getElementById('result-text');
+            const resultImage = document.getElementById('result-image');
+            const resultDescription = document.getElementById('result-description');
+
+            let selectedOptions = {
+                leaf: null,
+                flower: null,
+                height: null
+            };
+
+            options.forEach(button => {
+                button.addEventListener('click', function() {
+                    const category = this.dataset.category;
+                    const value = this.dataset.value;
+
+                    // Remove selected class from other buttons in same category
+                    document.querySelectorAll(`[data-category="${category}"]`).forEach(btn => {
+                        btn.classList.remove('selected');
+                    });
+
+                    // Add selected class to clicked button
+                    this.classList.add('selected');
+                    selectedOptions[category] = value;
+
+                    // Check if all options are selected
+                    if (Object.values(selectedOptions).every(option => option !== null)) {
+                        identifyPlant();
+                    }
+                });
+            });
+
+            function identifyPlant() {
+                const matches = Object.entries(plants).filter(([_, plant]) => {
+                    return plant.leaf === selectedOptions.leaf &&
+                           plant.flower === selectedOptions.flower &&
+                           plant.height === selectedOptions.height;
+                });
+
+                if (matches.length > 0) {
+                    const [_, plant] = matches[0];
+                    resultText.textContent = plant.name;
+                    resultImage.src = plant.image;
+                    resultImage.alt = plant.name;
+                    resultDescription.textContent = plant.description;
+                    resultContainer.classList.add('show');
+                } else {
+                    resultText.textContent = 'Keine passende Pflanze gefunden';
+                    resultImage.src = '';
+                    resultImage.alt = '';
+                    resultDescription.textContent = 'Bitte versuchen Sie eine andere Kombination von Merkmalen.';
+                    resultContainer.classList.add('show');
+                }
+            }
+        });
+    </script>
+</body>
+</html> 

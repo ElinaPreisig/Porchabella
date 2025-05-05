@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seitenverbindungen</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            color: #2c3e50;
+            margin-bottom: 2rem;
+        }
+
+        .link-section {
+            background: white;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .link-section h2 {
+            color: #3498db;
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid #3498db;
+        }
+
+        .link-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 1rem;
+        }
+
+        .link-item {
+            background: #f8f9fa;
+            padding: 0.8rem;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+
+        .link-item:hover {
+            background: #e9ecef;
+        }
+
+        .link-item a {
+            color: #2c3e50;
+            text-decoration: none;
+            display: block;
+        }
+
+        .link-item a:hover {
+            color: #3498db;
+        }
+
+        @media (max-width: 768px) {
+            .link-list {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .nav-buttons {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 1rem;
+            padding: 1rem;
+            background: #f8f9fa;
+            border-radius: 4px;
+        }
+
+        .nav-button {
+            padding: 0.5rem 1rem;
+            background: #3498db;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+
+        .nav-button:hover {
+            background: #2980b9;
+        }
+
+        .nav-button.disabled {
+            background: #95a5a6;
+            cursor: not-allowed;
+        }
+
+        @media (max-width: 768px) {
+            .nav-buttons {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Seitenverbindungen</h1>
+
+        <section class="link-section">
+            <h2>00_Intro</h2>
+            <ul class="link-list">
+                <li class="link-item"><a href="index.html">Index</a></li>
+            </ul>
+            <div class="nav-buttons">
+                <a href="#" class="nav-button disabled">Previous</a>
+                <a href="00_Intro.html" class="nav-button">Current</a>
+                <a href="index.html" class="nav-button">Next</a>
+            </div>
+        </section>
+
+        <section class="link-section">
+            <h2>0_Index</h2>
+            <ul class="link-list">
+                <li class="link-item"><a href="00_Intro.html">00_Intro</a></li>
+                <li class="link-item"><a href="1.0_Kapitel_1_-_Entstehung_Gletscher.html">1.0_Kapitel_1_-_Entstehung_Gletscher</a></li>
+                <li class="link-item"><a href="2.0_Kapitel_2_-_Wanderung_Gletscher.html">2.0_Kapitel_2_-_Wanderung_Gletscher</a></li>
+                <li class="link-item"><a href="3.0_Kapitel_3_-_Gletscherrückgang.html">3.0_Kapitel_3_-_Gletscherrückgang</a></li>
+                <li class="link-item"><a href="4.0_Kapitel_4_-_Gletscherleiche_Porchabella.html">4.0_Kapitel_4_-_Gletscherleiche_Porchabella</a></li>
+                <li class="link-item"><a href="5.0_Kapitel_5_-_Zukunft.html">5.0_Kapitel_5_-_Zukunft</a></li>
+            </ul>
+            <div class="nav-buttons">
+                <a href="00_Intro.html" class="nav-button">Previous</a>
+                <a href="index.html" class="nav-button">Current</a>
+                <a href="1.0_Kapitel_1_-_Entstehung_Gletscher.html" class="nav-button">Next</a>
+            </div>
+        </section>
+
+        <section class="link-section">
+            <h2>1.0_Kapitel_1_-_Entstehung_Gletscher</h2>
+            <ul class="link-list">
+                <li class="link-item"><a href="index.html">Index</a></li>
+                <li class="link-item"><a href="2.0_Kapitel_2_-_Wanderung_Gletscher.html">2.0_Kapitel_2_-_Wanderung_Gletscher</a></li>
+                <li class="link-item"><a href="3.0_Kapitel_3_-_Gletscherrückgang.html">3.0_Kapitel_3_-_Gletscherrückgang</a></li>
+                <li class="link-item"><a href="4.0_Kapitel_4_-_Gletscherleiche_Porchabella.html">4.0_Kapitel_4_-_Gletscherleiche_Porchabella</a></li>
+                <li class="link-item"><a href="5.0_Kapitel_5_-_Zukunft.html">5.0_Kapitel_5_-_Zukunft</a></li>
+                <li class="link-item"><a href="1.1_Sage_Porchabella.html">1.1_Sage_Porchabella</a></li>
+                <li class="link-item"><a href="1.2_Entstehung_Gletscher.html">1.2_Entstehung_Gletscher</a></li>
+            </ul>
+            <div class="nav-buttons">
+                <a href="index.html" class="nav-button">Previous</a>
+                <a href="1.0_Kapitel_1_-_Entstehung_Gletscher.html" class="nav-button">Current</a>
+                <a href="2.0_Kapitel_2_-_Wanderung_Gletscher.html" class="nav-button">Next</a>
+            </div>
+        </section>
+
+        <section class="link-section">
+            <h2>1.1_Sage_Porchabella</h2>
+            <ul class="link-list">
+                <li class="link-item"><a href="index.html">Index</a></li>
+                <li class="link-item"><a href="1.0_Kapitel_1_-_Entstehung_Gletscher.html">1.0_Kapitel_1_-_Entstehung_Gletscher</a></li>
+                <li class="link-item"><a href="1.2.1_Entstehung_Eis.html">1.2.1_Entstehung_Eis</a></li>
+                <li class="link-item"><a href="2.1_Ausdehnung_in_der_Schweiz.html">2.1_Ausdehnung_in_der_Schweiz</a></li>
+                <li class="link-item"><a href="4.1_Mythos_Porchabella.html">4.1_Mythos_Porchabella</a></li>
+                <li class="link-item"><a href="5.1_Visualisierung_Zukunft_Gletscher.html">5.1_Visualisierung_Zukunft_Gletscher</a></li>
+            </ul>
+            <div class="nav-buttons">
+                <a href="index.html" class="nav-button">Previous</a>
+                <a href="1.0_Kapitel_1_-_Entstehung_Gletscher.html" class="nav-button">Current</a>
+                <a href="1.2_Entstehung_Gletscher.html" class="nav-button">Next</a>
+            </div>
+        </section>
+
+        <section class="link-section">
+            <h2>1.2.1_Entstehung_Eis</h2>
+            <ul class="link-list">
+                <li class="link-item"><a href="index.html">Index</a></li>
+                <li class="link-item"><a href="1.0_Kapitel_1_-_Entstehung_Gletscher.html">1.0_Kapitel_1_-_Entstehung_Gletscher</a></li>
+                <li class="link-item"><a href="1.1_Sage_Porchabella.html">1.1_Sage_Porchabella</a></li>
+                <li class="link-item"><a href="1.2_Entstehung_Gletscher.html">1.2_Entstehung_Gletscher</a></li>
+                <li class="link-item"><a href="4.2.1_Konservierung_im_Eis.html">4.2.1_Konservierung_im_Eis</a></li>
+            </ul>
+            <div class="nav-buttons">
+                <a href="index.html" class="nav-button">Previous</a>
+                <a href="1.0_Kapitel_1_-_Entstehung_Gletscher.html" class="nav-button">Current</a>
+                <a href="1.2_Entstehung_Gletscher.html" class="nav-button">Next</a>
+            </div>
+        </section>
+
+        <section class="link-section">
+            <h2>1.2_Entstehung_Gletscher</h2>
+            <ul class="link-list">
+                <li class="link-item"><a href="index.html">Index</a></li>
+                <li class="link-item"><a href="1.0_Kapitel_1_-_Entstehung_Gletscher.html">1.0_Kapitel_1_-_Entstehung_Gletscher</a></li>
+                <li class="link-item"><a href="1.1_Sage_Porchabella.html">1.1_Sage_Porchabella</a></li>
+                <li class="link-item"><a href="1.2.1_Entstehung_Eis.html">1.2.1_Entstehung_Eis</a></li>
+                <li class="link-item"><a href="2.1_Ausdehnung_in_der_Schweiz.html">2.1_Ausdehnung_in_der_Schweiz</a></li>
+                <li class="link-item"><a href="3.2_Messung_Gletscher.html">3.2_Messung_Gletscher</a></li>
+                <li class="link-item"><a href="4.2.1_Konservierung_im_Eis.html">4.2.1_Konservierung_im_Eis</a></li>
+                <li class="link-item"><a href="5.1_Visualisierung_Zukunft_Gletscher.html">5.1_Visualisierung_Zukunft_Gletscher</a></li>
+                <li class="link-item"><a href="5.2_Lösungen.html">5.2_Lösungen</a></li>
+                <li class="link-item"><a href="5.3_Gletschervorfeld.html">5.3_Gletschervorfeld</a></li>
+            </ul>
+            <div class="nav-buttons">
+                <a href="index.html" class="nav-button">Previous</a>
+                <a href="1.0_Kapitel_1_-_Entstehung_Gletscher.html" class="nav-button">Current</a>
+                <a href="2.0_Kapitel_2_-_Wanderung_Gletscher.html" class="nav-button">Next</a>
+            </div>
+        </section>
+
+        <section class="link-section">
+            <h2>2.0_Kapitel_2_-_Wanderung_Gletscher</h2>
+            <ul class="link-list">
+                <li class="link-item"><a href="index.html">Index</a></li>
+                <li class="link-item"><a href="1.0_Kapitel_1_-_Entstehung_Gletscher.html">1.0_Kapitel_1_-_Entstehung_Gletscher</a></li>
+                <li class="link-item"><a href="3.0_Kapitel_3_-_Gletscherrückgang.html">3.0_Kapitel_3_-_Gletscherrückgang</a></li>
+                <li class="link-item"><a href="4.0_Kapitel_4_-_Gletscherleiche_Porchabella.html">4.0_Kapitel_4_-_Gletscherleiche_Porchabella</a></li>
+                <li class="link-item"><a href="5.0_Kapitel_5_-_Zukunft.html">5.0_Kapitel_5_-_Zukunft</a></li>
+                <li class="link-item"><a href="2.1_Ausdehnung_in_der_Schweiz.html">2.1_Ausdehnung_in_der_Schweiz</a></li>
+                <li class="link-item"><a href="2.2_Auswirkungen_Landschaft.html">2.2_Auswirkungen_Landschaft</a></li>
+                <li class="link-item"><a href="2.2.1_Gletschermühlen.html">2.2.1_Gletschermühlen</a></li>
+            </ul>
+            <div class="nav-buttons">
+                <a href="1.0_Kapitel_1_-_Entstehung_Gletscher.html" class="nav-button">Previous</a>
+                <a href="2.0_Kapitel_2_-_Wanderung_Gletscher.html" class="nav-button">Current</a>
+                <a href="3.0_Kapitel_3_-_Gletscherrückgang.html" class="nav-button">Next</a>
+            </div>
+        </section>
+
+        <section class="link-section">
+            <h2>2.1_Ausdehnung_in_der_Schweiz</h2>
+            <ul class="link-list">
+                <li class="link-item"><a href="index.html">Index</a></li>
+                <li class="link-item"><a href="2.0_Kapitel_2_-_Wanderung_Gletscher.html">2.0_Kapitel_2_-_Wanderung_Gletscher</a></li>
+                <li class="link-item"><a href="1.2_Entstehung_Gletscher.html">1.2_Entstehung_Gletscher</a></li>
+                <li class="link-item"><a href="2.2_Auswirkungen_Landschaft.html">2.2_Auswirkungen_Landschaft</a></li>
+                <li class="link-item"><a href="3.1_Karte_Rückgang.html">3.1_Karte_Rückgang</a></li>
+                <li class="link-item"><a href="5.1_Visualisierung_Zukunft_Gletscher.html">5.1_Visualisierung_Zukunft_Gletscher</a></li>
+            </ul>
+            <div class="nav-buttons">
+                <a href="1.2_Entstehung_Gletscher.html" class="nav-button">Previous</a>
+                <a href="2.1_Ausdehnung_in_der_Schweiz.html" class="nav-button">Current</a>
+                <a href="2.2_Auswirkungen_Landschaft.html" class="nav-button">Next</a>
+            </div>
+        </section>
+
+        <section class="link-section">
+            <h2>2.2.1_Gletschermühlen</h2>
+            <ul class="link-list">
+                <li class="link-item"><a href="index.html">Index</a></li>
+                <li class="link-item"><a href="2.0_Kapitel_2_-_Wanderung_Gletscher.html">2.0_Kapitel_2_-_Wanderung_Gletscher</a></li>
+                <li class="link-item"><a href="2.2_Auswirkungen_Landschaft.html">2.2_Auswirkungen_Landschaft</a></li>
+                <li class="link-item"><a href="5.3_Gletschervorfeld.html">5.3_Gletschervorfeld</a></li>
+            </ul>
+            <div class="nav-buttons">
+                <a href="2.0_Kapitel_2_-_Wanderung_Gletscher.html" class="nav-button">Previous</a>
+                <a href="2.2_Auswirkungen_Landschaft.html" class="nav-button">Current</a>
+                <a href="5.3_Gletschervorfeld.html" class="nav-button">Next</a>
+            </div>
+        </section>
+
+        <section class="link-section">
+            <h2>2.2_Auswirkungen_Landschaft</h2>
+            <ul class="link-list">
+                <li class="link-item"><a href="index.html">Index</a></li>
+                <li class="link-item"><a href="2.0_Kapitel_2_-_Wanderung_Gletscher.html">2.0_Kapitel_2_-_Wanderung_Gletscher</a></li>
+                <li class="link-item"><a href="1.2_Entstehung_Gletscher.html">1.2_Entstehung_Gletscher</a></li>
+                <li class="link-item"><a href="2.1_Ausdehnung_in_der_Schweiz.html">2.1_Ausdehnung_in_der_Schweiz</a></li>
+                <li class="link-item"><a href="2.2.1_Gletschermühlen.html">2.2.1_Gletschermühlen</a></li>
+                <li class="link-item"><a href="3.2_Messung_Gletscher.html">3.2_Messung_Gletscher</a></li>
+                <li class="link-item"><a href="5.3_Gletschervorfeld.html">5.3_Gletschervorfeld</a></li>
+            </ul>
+            <div class="nav-buttons">
+                <a href="1.2_Entstehung_Gletscher.html" class="nav-button">Previous</a>
+                <a href="2.2_Auswirkungen_Landschaft.html" class="nav-button">Current</a>
+                <a href="3.0_Kapitel_3_-_Gletscherrückgang.html" class="nav-button">Next</a>
+            </div>
+        </section>
+
+        <section class="link-section">
+            <h2>3.0_Kapitel_3_-_Gletscherrückgang</h2>
+            <ul class="link-list">
+                <li class="link-item"><a href="index.html">Index</a></li>
+                <li class="link-item"><a href="1.0_Kapitel_1_-_Entstehung_Gletscher.html">1.0_Kapitel_1_-_Entstehung_Gletscher</a></li>
+                <li class="link-item"><a href="2.0_Kapitel_2_-_Wanderung_Gletscher.html">2.0_Kapitel_2_-_Wanderung_Gletscher</a></li>
+                <li class="link-item"><a href="4.0_Kapitel_4_-_Gletscherleiche_Porchabella.html">4.0_Kapitel_4_-_Gletscherleiche_Porchabella</a></li>
+                <li class="link-item"><a href="5.0_Kapitel_5_-_Zukunft.html">5.0_Kapitel_5_-_Zukunft</a></li>
+                <li class="link-item"><a href="3.1_Karte_Rückgang.html">3.1_Karte_Rückgang</a></li>
+                <li class="link-item"><a href="3.2_Messung_Gletscher.html">3.2_Messung_Gletscher</a></li>
+            </ul>
+            <div class="nav-buttons">
+                <a href="2.0_Kapitel_2_-_Wanderung_Gletscher.html" class="nav-button">Previous</a>
+                <a href="3.0_Kapitel_3_-_Gletscherrückgang.html" class="nav-button">Current</a>
+                <a href="4.0_Kapitel_4_-_Gletscherleiche_Porchabella.html" class="nav-button">Next</a>
+            </div>
+        </section>
+
+        <section class="link-section">
+            <h2>3.1_Karte_Rückgang</h2>
+            <ul class="link-list">
+                <li class="link-item"><a href="index.html">Index</a></li>
+                <li class="link-item"><a href="3.0_Kapitel_3_-_Gletscherrückgang.html">3.0_Kapitel_3_-_Gletscherrückgang</a></li>
+                <li class="link-item"><a href="1.1_Sage_Porchabella.html">1.1_Sage_Porchabella</a></li>
+                <li class="link-item"><a href="2.1_Ausdehnung_in_der_Schweiz.html">2.1_Ausdehnung_in_der_Schweiz</a></li>
+                <li class="link-item"><a href="3.2_Messung_Gletscher.html">3.2_Messung_Gletscher</a></li>
+                <li class="link-item"><a href="4.2_Leichenfund.html">4.2_Leichenfund</a></li>
+                <li class="link-item"><a href="5.1_Visualisierung_Zukunft_Gletscher.html">5.1_Visualisierung_Zukunft_Gletscher</a></li>
+            </ul>
+            <div class="nav-buttons">
+                <a href="3.0_Kapitel_3_-_Gletscherrückgang.html" class="nav-button">Previous</a>
+                <a href="3.1_Karte_Rückgang.html" class="nav-button">Current</a>
+                <a href="4.0_Kapitel_4_-_Gletscherleiche_Porchabella.html" class="nav-button">Next</a>
+            </div>
+        </section>
+
+        <section class="link-section">
+            <h2>3.2_Messung_Gletscher</h2>
+            <ul class="link-list">
+                <li class="link-item"><a href="index.html">Index</a></li>
+                <li class="link-item"><a href="3.0_Kapitel_3_-_Gletscherrückgang.html">3.0_Kapitel_3_-_Gletscherrückgang</a></li>
+                <li class="link-item"><a href="1.2_Entstehung_Gletscher.html">1.2_Entstehung_Gletscher</a></li>
+                <li class="link-item"><a href="2.2_Auswirkungen_Landschaft.html">2.2_Auswirkungen_Landschaft</a></li>
+                <li class="link-item"><a href="4.2_Leichenfund.html">4.2_Leichenfund</a></li>
+                <li class="link-item"><a href="5.1_Visualisierung_Zukunft_Gletscher.html">5.1_Visualisierung_Zukunft_Gletscher</a></li>
+                <li class="link-item"><a href="5.2_Lösungen.html">5.2_Lösungen</a></li>
+            </ul>
+            <div class="nav-buttons">
+                <a href="2.0_Kapitel_2_-_Wanderung_Gletscher.html" class="nav-button">Previous</a>
+                <a href="3.0_Kapitel_3_-_Gletscherrückgang.html" class="nav-button">Current</a>
+                <a href="4.0_Kapitel_4_-_Gletscherleiche_Porchabella.html" class="nav-button">Next</a>
+            </div>
+        </section>
+
+        <section class="link-section">
+            <h2>4.0_Kapitel_4_-_Gletscherleiche_Porchabella</h2>
+            <ul class="link-list">
+                <li class="link-item"><a href="index.html">Index</a></li>
+                <li class="link-item"><a href="1.0_Kapitel_1_-_Entstehung_Gletscher.html">1.0_Kapitel_1_-_Entstehung_Gletscher</a></li>
+                <li class="link-item"><a href="2.0_Kapitel_2_-_Wanderung_Gletscher.html">2.0_Kapitel_2_-_Wanderung_Gletscher</a></li>
+                <li class="link-item"><a href="3.0_Kapitel_3_-_Gletscherrückgang.html">3.0_Kapitel_3_-_Gletscherrückgang</a></li>
+                <li class="link-item"><a href="5.0_Kapitel_5_-_Zukunft.html">5.0_Kapitel_5_-_Zukunft</a></li>
+                <li class="link-item"><a href="4.1_Mythos_Porchabella.html">4.1_Mythos_Porchabella</a></li>
+                <li class="link-item"><a href="4.2_Leichenfund.html">4.2_Leichenfund</a></li>
+                <li class="link-item"><a href="4.2.1_Konservierung_im_Eis.html">4.2.1_Konservierung_im_Eis</a></li>
+            </ul>
+            <div class="nav-buttons">
+                <a href="3.0_Kapitel_3_-_Gletscherrückgang.html" class="nav-button">Previous</a>
+                <a href="4.0_Kapitel_4_-_Gletscherleiche_Porchabella.html" class="nav-button">Current</a>
+                <a href="5.0_Kapitel_5_-_Zukunft.html" class="nav-button">Next</a>
+            </div>
+        </section>
+
+        <section class="link-section">
+            <h2>4.1_Mythos_Porchabella</h2>
+            <ul class="link-list">
+                <li class="link-item"><a href="index.html">Index</a></li>
+                <li class="link-item"><a href="4.0_Kapitel_4_-_Gletscherleiche_Porchabella.html">4.0_Kapitel_4_-_Gletscherleiche_Porchabella</a></li>
+                <li class="link-item"><a href="1.1_Sage_Porchabella.html">1.1_Sage_Porchabella</a></li>
+                <li class="link-item"><a href="3.1_Karte_Rückgang.html">3.1_Karte_Rückgang</a></li>
+                <li class="link-item"><a href="4.2_Leichenfund.html">4.2_Leichenfund</a></li>
+                <li class="link-item"><a href="5.1_Visualisierung_Zukunft_Gletscher.html">5.1_Visualisierung_Zukunft_Gletscher</a></li>
+            </ul>
+            <div class="nav-buttons">
+                <a href="4.0_Kapitel_4_-_Gletscherleiche_Porchabella.html" class="nav-button">Previous</a>
+                <a href="4.1_Mythos_Porchabella.html" class="nav-button">Current</a>
+                <a href="5.0_Kapitel_5_-_Zukunft.html" class="nav-button">Next</a>
+            </div>
+        </section>
+
+        <section class="link-section">
+            <h2>4.2.1_Konservierung_im_Eis</h2>
+            <ul class="link-list">
+                <li class="link-item"><a href="index.html">Index</a></li>
+                <li class="link-item"><a href="4.0_Kapitel_4_-_Gletscherleiche_Porchabella.html">4.0_Kapitel_4_-_Gletscherleiche_Porchabella</a></li>
+                <li class="link-item"><a href="1.2.1_Entstehung_Eis.html">1.2.1_Entstehung_Eis</a></li>
+                <li class="link-item"><a href="2.2.1_Gletschermühlen.html">2.2.1_Gletschermühlen</a></li>
+                <li class="link-item"><a href="4.1_Mythos_Porchabella.html">4.1_Mythos_Porchabella</a></li>
+                <li class="link-item"><a href="5.1_Visualisierung_Zukunft_Gletscher.html">5.1_Visualisierung_Zukunft_Gletscher</a></li>
+            </ul>
+            <div class="nav-buttons">
+                <a href="4.0_Kapitel_4_-_Gletscherleiche_Porchabella.html" class="nav-button">Previous</a>
+                <a href="4.2_Leichenfund.html" class="nav-button">Current</a>
+                <a href="5.0_Kapitel_5_-_Zukunft.html" class="nav-button">Next</a>
+            </div>
+        </section>
+
+        <section class="link-section">
+            <h2>4.2_Leichenfund</h2>
+            <ul class="link-list">
+                <li class="link-item"><a href="index.html">Index</a></li>
+                <li class="link-item"><a href="4.0_Kapitel_4_-_Gletscherleiche_Porchabella.html">4.0_Kapitel_4_-_Gletscherleiche_Porchabella</a></li>
+                <li class="link-item"><a href="1.1_Sage_Porchabella.html">1.1_Sage_Porchabella</a></li>
+                <li class="link-item"><a href="3.1_Karte_Rückgang.html">3.1_Karte_Rückgang</a></li>
+                <li class="link-item"><a href="4.1_Mythos_Porchabella.html">4.1_Mythos_Porchabella</a></li>
+                <li class="link-item"><a href="4.2.1_Konservierung_im_Eis.html">4.2.1_Konservierung_im_Eis</a></li>
+                <li class="link-item"><a href="5.3_Gletschervorfeld.html">5.3_Gletschervorfeld</a></li>
+            </ul>
+            <div class="nav-buttons">
+                <a href="4.0_Kapitel_4_-_Gletscherleiche_Porchabella.html" class="nav-button">Previous</a>
+                <a href="4.2_Leichenfund.html" class="nav-button">Current</a>
+                <a href="5.0_Kapitel_5_-_Zukunft.html" class="nav-button">Next</a>
+            </div>
+        </section>
+
+        <section class="link-section">
+            <h2>5.0_Kapitel_5_-_Zukunft</h2>
+            <ul class="link-list">
+                <li class="link-item"><a href="index.html">Index</a></li>
+                <li class="link-item"><a href="1.0_Kapitel_1_-_Entstehung_Gletscher.html">1.0_Kapitel_1_-_Entstehung_Gletscher</a></li>
+                <li class="link-item"><a href="2.0_Kapitel_2_-_Wanderung_Gletscher.html">2.0_Kapitel_2_-_Wanderung_Gletscher</a></li>
+                <li class="link-item"><a href="3.0_Kapitel_3_-_Gletscherrückgang.html">3.0_Kapitel_3_-_Gletscherrückgang</a></li>
+                <li class="link-item"><a href="4.0_Kapitel_4_-_Gletscherleiche_Porchabella.html">4.0_Kapitel_4_-_Gletscherleiche_Porchabella</a></li>
+                <li class="link-item"><a href="5.1_Visualisierung_Zukunft_Gletscher.html">5.1_Visualisierung_Zukunft_Gletscher</a></li>
+                <li class="link-item"><a href="5.2_Lösungen.html">5.2_Lösungen</a></li>
+                <li class="link-item"><a href="5.3_Gletschervorfeld.html">5.3_Gletschervorfeld</a></li>
+            </ul>
+            <div class="nav-buttons">
+                <a href="4.0_Kapitel_4_-_Gletscherleiche_Porchabella.html" class="nav-button">Previous</a>
+                <a href="5.0_Kapitel_5_-_Zukunft.html" class="nav-button">Current</a>
+                <a href="#" class="nav-button disabled">Next</a>
+            </div>
+        </section>
+
+        <section class="link-section">
+            <h2>5.1_Visualisierung_Zukunft_Gletscher</h2>
+            <ul class="link-list">
+                <li class="link-item"><a href="index.html">Index</a></li>
+                <li class="link-item"><a href="5.0_Kapitel_5_-_Zukunft.html">5.0_Kapitel_5_-_Zukunft</a></li>
+                <li class="link-item"><a href="1.2_Entstehung_Gletscher.html">1.2_Entstehung_Gletscher</a></li>
+                <li class="link-item"><a href="2.2_Auswirkungen_Landschaft.html">2.2_Auswirkungen_Landschaft</a></li>
+                <li class="link-item"><a href="3.2_Messung_Gletscher.html">3.2_Messung_Gletscher</a></li>
+                <li class="link-item"><a href="4.2.1_Konservierung_im_Eis.html">4.2.1_Konservierung_im_Eis</a></li>
+            </ul>
+            <div class="nav-buttons">
+                <a href="5.0_Kapitel_5_-_Zukunft.html" class="nav-button">Previous</a>
+                <a href="5.1_Visualisierung_Zukunft_Gletscher.html" class="nav-button">Current</a>
+                <a href="5.2_Lösungen.html" class="nav-button">Next</a>
+            </div>
+        </section>
+
+        <section class="link-section">
+            <h2>5.2_Lösungen</h2>
+            <ul class="link-list">
+                <li class="link-item"><a href="index.html">Index</a></li>
+                <li class="link-item"><a href="5.0_Kapitel_5_-_Zukunft.html">5.0_Kapitel_5_-_Zukunft</a></li>
+                <li class="link-item"><a href="1.1_Sage_Porchabella.html">1.1_Sage_Porchabella</a></li>
+                <li class="link-item"><a href="2.2_Auswirkungen_Landschaft.html">2.2_Auswirkungen_Landschaft</a></li>
+                <li class="link-item"><a href="3.1_Karte_Rückgang.html">3.1_Karte_Rückgang</a></li>
+                <li class="link-item"><a href="4.2_Leichenfund.html">4.2_Leichenfund</a></li>
+            </ul>
+            <div class="nav-buttons">
+                <a href="5.1_Visualisierung_Zukunft_Gletscher.html" class="nav-button">Previous</a>
+                <a href="5.2_Lösungen.html" class="nav-button">Current</a>
+                <a href="5.3_Gletschervorfeld.html" class="nav-button">Next</a>
+            </div>
+        </section>
+
+        <section class="link-section">
+            <h2>5.3_Gletschervorfeld</h2>
+            <ul class="link-list">
+                <li class="link-item"><a href="index.html">Index</a></li>
+                <li class="link-item"><a href="5.0_Kapitel_5_-_Zukunft.html">5.0_Kapitel_5_-_Zukunft</a></li>
+                <li class="link-item"><a href="1.1_Sage_Porchabella.html">1.1_Sage_Porchabella</a></li>
+                <li class="link-item"><a href="2.2_Auswirkungen_Landschaft.html">2.2_Auswirkungen_Landschaft</a></li>
+                <li class="link-item"><a href="3.1_Karte_Rückgang.html">3.1_Karte_Rückgang</a></li>
+            </ul>
+            <div class="nav-buttons">
+                <a href="5.2_Lösungen.html" class="nav-button">Previous</a>
+                <a href="5.3_Gletschervorfeld.html" class="nav-button">Current</a>
+                <a href="#" class="nav-button disabled">Next</a>
+            </div>
+        </section>
+    </div>
+</body>
+</html> 
