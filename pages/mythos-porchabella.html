@@ -1,0 +1,107 @@
+<!-- Main Content -->
+<main class="main-container mystic-page">
+    <!-- Title and Description Section -->
+    <section class="content-section">
+        <h1 class="page-title">Mythos Porchabella</h1>
+        <p class="page-description">
+            Manchmal gibt der Gletscher auch seine Geheimnisse preis. So sorgte 1992 eine Entdeckung, die schon 300 Jahre auf dem Gletscher schlummerte, für grosse Aufmerksamkeit. Eine weibliche Gletscherleiche im Alter zwischen 20 und 25 Jahren, mit zwei verschiedenen Schuhen, Läusen im Haar und rotem Mantel. Wer war diese Frau?
+        </p>
+    </section>
+
+    <!-- Interactive Audio Section -->
+    <section class="content-section interactive-audio-section">
+        <p class="audio-description">Klicke auf die Bilder, um verschiedene Vermutungen zu hören</p>
+        
+        <div class="audio-grid">
+            <!-- Erika Kaeser Audio -->
+            <div class="audio-item" onclick="playAudio('kaeserAudio', this)">
+                <div class="audio-image-container">
+                    <img src="material/Bilder/Screenshot_ErikaKaeser.jpg" alt="Erika Kaeser" class="audio-image">
+                    <div class="play-overlay">
+                        <div class="play-icon">▶</div>
+                    </div>
+                </div>
+                <div class="audio-info">
+                    <h3 class="audio-track-title">Erika Kaeser</h3>
+                    <p class="audio-track-description">Hüttenwartin der Keschhütte zur Zeit des Fundes</p>
+                </div>
+                <audio id="kaeserAudio" preload="metadata">
+                    <source src="material/Audio/4.1_QuoteKaeser.wav" type="audio/wav">
+                </audio>
+            </div>
+
+            <!-- Marco Sommerau Audio -->
+            <div class="audio-item" onclick="playAudio('sommerauAudio', this)">
+                <div class="audio-image-container">
+                    <img src="material/Bilder/Screenshot_MarcoSommerau.jpg" alt="Marco Sommerau" class="audio-image">
+                    <div class="play-overlay">
+                        <div class="play-icon">▶</div>
+                    </div>
+                </div>
+                <div class="audio-info">
+                    <h3 class="audio-track-title">Marco Sommerau</h3>
+                    <p class="audio-track-description">Finder der Porchabella-Leiche</p>
+                </div>
+                <audio id="sommerauAudio" preload="metadata">
+                    <source src="material/Audio/4.1_QuoteSommerau.wav" type="audio/wav">
+                </audio>
+            </div>
+
+            <!-- Thomas Reitmeier Audio -->
+            <div class="audio-item" onclick="playAudio('reitmeierAudio', this)">
+                <div class="audio-image-container">
+                    <img src="material/Bilder/Screenshot_ThomasReitemeier.jpg" alt="Thomas Reitmeier" class="audio-image">
+                    <div class="play-overlay">
+                        <div class="play-icon">▶</div>
+                    </div>
+                </div>
+                <div class="audio-info">
+                    <h3 class="audio-track-title">Thomas Reitmeier</h3>
+                    <p class="audio-track-description">Kantonsarchäologe und Leiter der Untersuchungen zur Porchabella 2015</p>
+                </div>
+                <audio id="reitmeierAudio" preload="metadata">
+                    <source src="material/Audio/4.1_QuoteReitmeier.wav" type="audio/wav">
+                </audio>
+            </div>
+        </div>
+    </section>
+
+    <!-- Additional Content Section -->
+    <section class="content-section">
+        <p>
+            Eine andere Geschichte erzählt das Wanderhörspiel "<a href="https://www.parc-ela.ch/de/porchabella-vogel-freiheit">Porchabella - der Vogel Freiheit</a>". In acht Teilen kann man die Geschichte einer jungen Frau, auf der Suche nach der Freiheit, hören.</p>
+
+        <!-- Porchabella Teaser Audio Player -->
+        <div class="audio-player-container">
+            <audio controls preload="metadata">
+                <source src="material/Audio/Porchabella_Teaser.wav" type="audio/wav">
+                Dein Browser unterstützt das Audio-Element nicht.
+            </audio>
+        </div>
+    </section>
+
+    <!-- Continue Section -->
+    <section class="content-section continue-section">
+        <!-- Mystiker-Pfad Button (ursprünglich) -->
+        <div class="path-buttons" id="mystikerButtons" style="display: none;">
+            <a href="#auswahl" class="back-button">Zurück</a>
+            <a href="#gletscher-zukunft" class="continue-button">
+                <span class="button-text">Weiter</span>
+            </a>
+        </div>
+        <!-- Abenteurer-Pfad Buttons -->
+        <div class="path-buttons" id="adventurerButtons" style="display: none;">
+            <a href="#auswahl" class="back-button">Zurück</a>
+            <a href="#sage-porchabella?role=abenteurer" class="continue-button path-button">
+                <span class="button-text">Sage Porchabella</span>
+            </a>
+            <a href="#leichenfund?role=abenteurer" class="continue-button path-button">
+                <span class="button-text">Leichenfund</span>
+            </a>
+        </div>
+        <!-- Zurück Button -->
+        <div class="path-buttons" id="defaultButtons">
+            <a href="#sage-porchabella" class="back-button">← Zurück zur Sage</a>
+        </div>
+    </section>
+</main> 

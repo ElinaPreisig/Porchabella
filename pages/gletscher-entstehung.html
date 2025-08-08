@@ -1,0 +1,88 @@
+<!-- Main Content -->
+<main class="main-container scientific-page">
+    <!-- Title and Description Section -->
+    <section class="content-section">
+        <h1 class="page-title">Wie entsteht ein Gletscher?</h1>
+        <p class="page-description">
+            Gletscher gibt es schon seit tausenden von Jahren. Doch wie entsteht so ein eisiger Riese?
+        </p>
+        
+        <h2>Grundbedingungen</h2>
+        <p>
+            Zunächst müssen die Grundbedingungen stimmen. Damit ein Gletscher entstehen kann, darf der Winterschnee während dem Sommer nicht vollständig schmelzen. Dazu braucht es vor allem niedrige Temperaturen im Sommer und hohe Niederschlagsmengen in Form von Schnee im Winter. Diese Bedingungen sind natürlich nicht überall gegeben, weshalb man Gletscher heutzutage nur noch in höhergelegenen Gebieten und an den Polen der Erde findet.
+        </p>
+        
+        <h2>Von Schnee zu Eis</h2>
+        <p>
+            Der liegengebliebene Schnee verdichtet sich mit der Zeit zu grobkörnigeren Eiskristallen in der Grösse von ungefähr einem Stecknadelkopf, auch Firn genannt. Durch den Druck von Neuschnee und Niederschlag entweicht die eingeschlossene Luft und verwandelt den noch wasserdurchlässigen Firn in Gletschereis. Diese Umwandlung findet im sogenannten Nährgebiet des Gletschers statt.
+        </p>
+        
+        <h2>Gletscherzonen</h2>
+        <p>
+            Denn Gletscher haben drei Zonen: Nährgebiete, Zehrgebiete und dazwischen die sogenannte Gleichgewichts- oder Firngrenze. Im oberen Teil des Gletschers, dem Nährgebiet, überwiegt der Zuwachs des Eises. Am unteren Teil Richtung Gletscherzunge, dem Zehrgebiet, schmilzt das Eis. Dazwischen befindet sich die Firngrenze.
+        </p>
+        
+        <h2>Gletscherbewegung</h2>
+        <p>
+            Durch die Schwerkraft beginnen Gletscher ab einer Mächtigkeit von ca. 60 Metern in Richtung Tal zu fliessen. Doch nicht alle Teile des Gletscher fliessen gleich schnell. Die Mitte bewegt sich durch den höheren Druck schneller und bringt so Spannung aufs Eis. Wird diese zu gross, entstehen Spalten.
+        </p>
+        
+        <h2>Gletschergeschwindigkeit</h2>
+        <p>
+            Was denkst du, wie schnell bewegt sich ein Gletscher pro Jahr Richtung Tal?
+        </p>
+        
+        <div class="quiz-section">
+            <div class="quiz-input-wrapper">
+                <input 
+                    type="number" 
+                    id="glacierSpeed" 
+                    min="1" 
+                    max="1000000" 
+                    placeholder="Geschwindigkeit"
+                    class="quiz-input"
+                >
+                <span class="quiz-unit">Meter</span>
+                <button 
+                    id="submitGuess" 
+                    onclick="checkGlacierSpeed()"
+                    class="quiz-button"
+                >
+                    Schätzung abgeben
+                </button>
+            </div>
+            <div id="result" class="quiz-result"></div>
+        </div>
+
+        <p>
+            Welche Kraft in einem Gletscher steckt, kann man auch an der Natur um uns herum beobachten. Mehr dazu im nächsten Kapitel!
+        </p>
+    </section>
+
+    <!-- Continue Section -->
+    <section class="continue-section">
+        <!-- Wissenschaftlerin-Pfad Buttons -->
+        <div class="path-buttons" id="wissenschaftlerinButtons" style="display: none;">
+            <a href="#auswahl" class="back-button">Zurück</a>
+            <a href="#auswirkungen-landschaft?role=wissenschaftlerin" class="continue-button">
+                Weiter
+            </a>
+        </div>
+        <!-- Abenteurer-Pfad Buttons -->
+        <div class="path-buttons" id="adventurerButtons" style="display: none;">
+            <a href="#sage-porchabella?role=abenteurer" class="back-button">Zurück</a>
+            <a href="#gletscherwanderung?role=abenteurer" class="continue-button path-button">
+                <span class="button-text">Gletscherwanderung</span>
+            </a>
+            <a href="#auswirkungen-landschaft?role=abenteurer" class="continue-button path-button">
+                <span class="button-text">Auswirkungen Landschaft</span>
+            </a>
+        </div>
+        <!-- Zurück Button (nur für andere Rollen) -->
+        <div class="path-buttons" id="defaultButtons">
+            <a href="#sage-porchabella" class="back-button">← Zurück zur Sage</a>
+        </div>
+    </section>
+</main>
+
+ 

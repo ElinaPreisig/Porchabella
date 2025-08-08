@@ -1,0 +1,48 @@
+<!-- Fullscreen Video Container -->
+<main class="main-container mystic-page">
+    <section class="content-section">
+    <h1 class="page-title">Schönes Schwein!</h1>
+    <p class="page-description">Wusstest du, dass Porchabella übersetzt schönes Schwein bedeutet? <br> 
+        Der Name stammt aus dem Romanischen und geht auf eine alte Sage zur Entstehung des Gletscher zurück, bei der ein paar Alphirte nicht ganz unbedeutend waren...</p>
+        <section class="content-section video-section">
+            <div class="video-wrapper">
+                <iframe 
+                    id="youtubeVideo"
+                    width="1920" 
+                    height="1080" 
+                    src="https://www.youtube.com/embed/62YXMITSMgY?si=_DTUPnsGut9LHLPG" 
+                    title="YouTube video player" 
+                    frameborder="0" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                    referrerpolicy="strict-origin-when-cross-origin" 
+                    allowfullscreen>
+                </iframe>
+            </div>
+    </section>
+    <!-- Navigation Buttons für verschiedene Pfade -->
+    <div class="content-section continue-section" id="continueSection">
+        <!-- Abenteurer-Pfad Buttons -->
+        <div class="path-buttons" id="adventurerButtons" style="display: none;">
+            <a href="#auswahl" class="back-button">Zurück</a>
+            <a href="#gletscher-entstehung?role=abenteurer" class="continue-button path-button">
+                <span class="button-text">Gletscher Entstehung</span>
+            </a>
+            <a href="#mythos-porchabella?role=abenteurer" class="continue-button path-button">
+                <span class="button-text">Mythos Porchabella</span>
+            </a>
+        </div>
+        <!-- Mystiker-Pfad Buttons nebeneinander -->
+        <div class="path-buttons" id="mystikerButtons" style="display: none;">
+            <a href="#auswahl" class="back-button">Zurück</a>
+            <a href="#gletscherwanderung?role=mystiker" class="continue-button">
+                Weiter
+            </a>
+        </div>
+        <!-- Zurück Button (nur für andere Rollen) -->
+        <div class="path-buttons" id="defaultButtons">
+            <a href="#auswahl" class="back-button">Zurück</a>
+        </div>
+    </div>
+    </section>
+</main>
+ 

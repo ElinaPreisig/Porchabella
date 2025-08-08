@@ -1,148 +1,40 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Introduction</title>
-    <link rel="stylesheet" href="../styles.css">
-    <style>
-        .animation-container {
-            position: relative;
-            width: 100%;
-            height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            background: linear-gradient(45deg, #1a1a1a, #2c3e50);
-            overflow: hidden;
-        }
+<!-- Slide Navigation Dots -->
+<div class="slide-indicator" id="slideIndicator">
+    <div class="slide-dot active" data-slide="0"></div>
+    <div class="slide-dot" data-slide="1"></div>
+    <div class="slide-dot" data-slide="2"></div>
+    <div class="slide-dot" data-slide="3"></div>
+    <div class="slide-dot" data-slide="4"></div>
+    <div class="slide-dot" data-slide="5"></div>
+    <div class="slide-dot" data-slide="6"></div>
+</div>
 
-        .glacier {
-            position: absolute;
-            width: 200px;
-            height: 200px;
-            background: linear-gradient(135deg, #ffffff, #e0e0e0);
-            border-radius: 50%;
-            animation: float 6s ease-in-out infinite;
-            box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
-        }
-
-        .glacier::before {
-            content: '';
-            position: absolute;
-            top: -20px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 40px;
-            height: 40px;
-            background: #ffffff;
-            border-radius: 50%;
-            box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
-        }
-
-        .glacier::after {
-            content: '';
-            position: absolute;
-            bottom: -20px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 60px;
-            height: 60px;
-            background: #ffffff;
-            border-radius: 50%;
-            box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
-        }
-
-        @keyframes float {
-            0%, 100% {
-                transform: translateY(0) rotate(0deg);
-            }
-            50% {
-                transform: translateY(-20px) rotate(5deg);
-            }
-        }
-
-        .snow {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            pointer-events: none;
-        }
-
-        .snowflake {
-            position: absolute;
-            background: white;
-            border-radius: 50%;
-            animation: fall linear infinite;
-        }
-
-        @keyframes fall {
-            0% {
-                transform: translateY(-100%);
-                opacity: 1;
-            }
-            100% {
-                transform: translateY(100vh);
-                opacity: 0;
-            }
-        }
-
-        .title {
-            position: absolute;
-            color: white;
-            font-size: 3rem;
-            text-align: center;
-            text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
-            z-index: 1;
-            animation: pulse 2s ease-in-out infinite;
-        }
-
-        @keyframes pulse {
-            0%, 100% {
-                transform: scale(1);
-            }
-            50% {
-                transform: scale(1.05);
-            }
-        }
-    </style>
-</head>
-<body>
-    <div class="animation-container">
-        <h1 class="title">Gletscher Dokumentation</h1>
-        <div class="glacier"></div>
-        <div class="snow" id="snow"></div>
-    </div>
-
-    <audio id="backgroundMusic" autoplay loop>
-        <source src="../audio/background.mp3" type="audio/mpeg">
-        Your browser does not support the audio element.
-    </audio>
-
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            // Create snowflakes
-            const snow = document.getElementById('snow');
-            for (let i = 0; i < 50; i++) {
-                const snowflake = document.createElement('div');
-                snowflake.className = 'snowflake';
-                snowflake.style.width = Math.random() * 5 + 2 + 'px';
-                snowflake.style.height = snowflake.style.width;
-                snowflake.style.left = Math.random() * 100 + '%';
-                snowflake.style.animationDuration = Math.random() * 3 + 2 + 's';
-                snowflake.style.animationDelay = Math.random() * 5 + 's';
-                snow.appendChild(snowflake);
-            }
-
-            // Play background music
-            const audio = document.getElementById('backgroundMusic');
-            audio.volume = 0.3; // Set volume to 30%
-
-            // Redirect after 10 seconds
-            setTimeout(function() {
-                window.location.href = '../index.html';
-            }, 10000);
-        });
-    </script>
-</body>
-</html> 
+<div class="container" id="slideContainer" style="background-image: url('material/Bilder/Bg_Gletscher_Zeit.jpg'); background-size: cover; background-position: center; background-attachment: fixed; background-repeat: no-repeat;">
+    <section class="slide" data-slide="0" style="background: linear-gradient(to bottom, transparent 0%, transparent 50%, rgba(248, 250, 252, 0.9) 100%);">
+    </section>
+    <section class="slide" data-slide="1">
+        <h1>Chau! Ich bin Porchabella</h1>
+    </section>
+    <section class="slide" data-slide="2">
+        <h1>Ein kleiner Gletscher in Graubünden</h1>
+    </section>
+    <section class="slide" data-slide="3">
+        <h1>Meine Geschwister und ich schmelzen seit Jahren immer weiter zurück</h1>
+    </section>
+    <section class="slide" data-slide="4">
+        <h1>Dabei bin ich so viel mehr als nur gefrorenes Wasser</h1>
+    </section>
+    <section class="slide" data-slide="5">
+        <h1>Entdecke meine Welt durch die Augen meiner Freunde</h1>
+    </section>
+    <section class="slide" data-slide="6">
+        <h2>Diese Website ist für Desktop optimiert.<br> 
+            Schnappe dir am besten deinen Laptop und mache es dir gemütlich.<br>
+            Für ein optimales Erlebnis, aktiviere den Vollbildmodus und stelle die Musik auf laut. <br>
+            Viel Spass beim Erkunden des Gletschers!
+        </h2>
+        <div class="slide-actions">
+            <a href="#auswahl" class="next-button">Weiter</a>
+        </div>
+    </section>
+</div> 
